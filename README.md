@@ -6,6 +6,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### Install dependencies
+
+```
+npm install
+```
+
+### Run React dev server (http://localhost:3000)
+
+```
+npm start
+```
+
 ### `npm start`
 
 Runs the app in the development mode.\
