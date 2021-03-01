@@ -27,7 +27,7 @@ export const fetchedIngredientsFailed = () => {
     }
 }
 
-export const initIngredient = () => {
+export const initIngredients = () => {
     return dispatch => {
         axios
         .get(
