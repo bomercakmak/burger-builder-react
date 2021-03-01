@@ -14,31 +14,20 @@ import * as burgerBuilderActions from "../../store/actions/index";
 
 class BurgerBuilder extends Component {
   state = {
-    purchasing: false,
-    loading: false,
-    error: false,
+    purchasing: false
   };
 
   componentDidMount() {
-    // axios
-    //   .get(
-    //     "https://burger-builder-react-28c1e-default-rtdb.firebaseio.com/ingredients.json"
-    //   )
-    //   .then((response) => {
-    //     this.setState({ ingredients: response.data });
-    //   })
-    //   .catch((error) => {
-    //     this.setState({ error: true });
-    //   });
+
   }
 
   updatedpurchaseState = (ingredients) => {
     const sum = Object.keys(ingredients)
-      .map((igKey) => {
+      .map((igKey) => {  
         return ingredients[igKey];
-      })
+      })    
       .reduce((sum, el) => {
-        return sum + el;
+        return sum + el;   
       }, 0);
      return sum > 0;
   };
@@ -92,9 +81,6 @@ class BurgerBuilder extends Component {
           purchaseContinued={this.purchaseContinueHandler}
         />
       );
-    }
-    if (this.state.loading) {
-      orderSummary = <Spinner />;
     }
 
     return (
