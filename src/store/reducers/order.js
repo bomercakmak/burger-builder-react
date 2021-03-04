@@ -32,6 +32,14 @@ const fetchOrdersStart = (state, action) => {
   return updatedObject(state, { loading: true });
 };
 
+const fetchOrdersSuccess = (state, action) => {
+  return updatedObject(state, { orders: action.orders, loading: false });
+};
+
+const fetchOrdersFail = (state, action) => {
+  return updatedObject(state, { loading: false });
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.PURCHASE_INIT:
@@ -47,9 +55,9 @@ const reducer = (state = initialState, action) => {
       return fetchOrdersStart(state, action);
 
     case actionTypes.FETCH_ORDERS_SUCCESS:
-      return updatedObject(state, { orders: action.orders, loading: false });
+      return fetchOrdersSuccess(state, action);
     case actionTypes.FETCH_ORDERS_FAIL:
-      return updatedObject(state, { loading: false });
+      return fetchOrdersFail(state, action);
 
     default:
       return state;
