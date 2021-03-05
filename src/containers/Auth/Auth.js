@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Input from "../../components/UI/Input/Input";
 import Button from "../../components/UI/Button/Button";
+import classes from "./Auth.module.css"
 
 class Auth extends Component {
   state = {
@@ -36,18 +37,38 @@ class Auth extends Component {
     },
   };
 
+
   render() {
     const formElementsArray = [];
-    for (let key in this.state.orderForm) {
+    for (let key in this.state.controls) {
       formElementsArray.push({
         id: key,
-        config: this.state.orderForm[key],
+        config: this.state.controls[key],
       });
     }
 
+    const form = formElementsArray.map((formElement) => (
+      <Input
+        key={formElement.id}
+        elementType={formElement.config.elementType}
+        elementConfig={formElement.config.elementConfig}
+        value={formElement.config.value}
+        shouldValidate={formElement.config.validation}
+        invalid={!formElement.config.valid}
+        touched={formElement.config.touched}
+        changed={(event) => this.inputChangedHandler(event, formElement.id)}
+
+      />
+    ));
+
     return (
-      <div>
-        <form></form>
+      <div className={classes.Auth}>
+        <form>
+            {form}
+            <Button btnType="Success">SUBMIT</Button>
+
+
+        </form>
       </div>
     );
   }
