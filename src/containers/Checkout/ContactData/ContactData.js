@@ -125,6 +125,10 @@ class ContactData extends Component {
     if (rules.maxLenght) {
       isValid = value.length <= rules.maxLenght && isValid;
     }
+    if (rules.isEmail) {
+      const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+      isValid = pattern.test(value) && isValid
+    }
 
     return isValid;
   }
@@ -158,7 +162,7 @@ class ContactData extends Component {
         id: key,
         config: this.state.orderForm[key],
       });
-    }
+     }
     console.log(formElementsArray);
     let form = (
       <form onSubmit={this.orderHandler}>
