@@ -137,7 +137,9 @@ class Auth extends Component {
         authRedirect = <Redirect to={this.props.authRedirectPath}/>
       }
     return (
+        
       <div className={classes.Auth}>
+        <h2>{this.state.isSignup ?  "SIGN-UP" : "SIGN-IN"}</h2>
         {authRedirect}
         {errorMessage}
         <form onSubmit={this.submitHandler}>
