@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 # To test the application
-## `[Try It Out Now!](https://bomercakmak-burger-builder.netlify.app/)`
+[Try It Out Now!](https://bomercakmak-burger-builder.netlify.app/)
 
 
 ## Available Scripts
