@@ -7,6 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # To test the application
 [Try It Out Now!](https://bomercakmak-burger-builder.netlify.app/)
 
+# Introduction video of my application 
+
+<a href="https://bomercakmak-burger-builder.netlify.app/"><img src="./src/assets/gif/Burger.gif" title="Burger.gif"></a>
+
 
 ## Available Scripts
 
